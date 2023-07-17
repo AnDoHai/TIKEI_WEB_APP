@@ -9,7 +9,16 @@
   <ItemGroup>
     <Folder Include="AutoMapper\" />
     <Folder Include="Model\" />
-    <Folder Include="Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <PackageReference Include="System.Linq" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Tikkei.Entity\Tikkei.Entity.csproj" />
+    <ProjectReference Include="..\Tikkei.Repository\Tikkei.Repository.csproj" />
   </ItemGroup>
 
 </Project>

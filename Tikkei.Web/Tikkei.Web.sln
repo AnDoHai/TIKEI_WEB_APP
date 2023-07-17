@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tikkei.Web", "Tikkei.Web\Tikkei.Web.csproj", "{CF33BD9B-1AB6-4A30-B712-7345914999C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tikkei.Service", "Tikkei.Service\Tikkei.Service.csproj", "{BBB2EEC0-EDD4-4ACE-8A09-F9101B75E3EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tikkei.Service", "Tikkei.Service\Tikkei.Service.csproj", "{BBB2EEC0-EDD4-4ACE-8A09-F9101B75E3EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tikkei.Repository", "Tikkei.Repository\Tikkei.Repository.csproj", "{0DA985E0-9E30-480A-BC45-6CC56F5F2BB1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tikkei.Repository", "Tikkei.Repository\Tikkei.Repository.csproj", "{0DA985E0-9E30-480A-BC45-6CC56F5F2BB1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tikkei.Entity", "Tikkei.Entity\Tikkei.Entity.csproj", "{6C1FB988-EC87-476A-839D-A2576F92E319}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tikkei.Data", "Tikkei.Data\Tikkei.Data.csproj", "{488800F5-F87C-4F08-9C80-275CAB042DA7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tikkei.Web", "Tikkei.Web\Tikkei.Web.csproj", "{CF358CA5-D9E2-45CA-8BE8-3F77E25D40B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CF33BD9B-1AB6-4A30-B712-7345914999C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CF33BD9B-1AB6-4A30-B712-7345914999C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CF33BD9B-1AB6-4A30-B712-7345914999C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CF33BD9B-1AB6-4A30-B712-7345914999C3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BBB2EEC0-EDD4-4ACE-8A09-F9101B75E3EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BBB2EEC0-EDD4-4ACE-8A09-F9101B75E3EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBB2EEC0-EDD4-4ACE-8A09-F9101B75E3EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -29,10 +25,14 @@ Global
 		{0DA985E0-9E30-480A-BC45-6CC56F5F2BB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DA985E0-9E30-480A-BC45-6CC56F5F2BB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DA985E0-9E30-480A-BC45-6CC56F5F2BB1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{488800F5-F87C-4F08-9C80-275CAB042DA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{488800F5-F87C-4F08-9C80-275CAB042DA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{488800F5-F87C-4F08-9C80-275CAB042DA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{488800F5-F87C-4F08-9C80-275CAB042DA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C1FB988-EC87-476A-839D-A2576F92E319}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C1FB988-EC87-476A-839D-A2576F92E319}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C1FB988-EC87-476A-839D-A2576F92E319}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C1FB988-EC87-476A-839D-A2576F92E319}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF358CA5-D9E2-45CA-8BE8-3F77E25D40B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF358CA5-D9E2-45CA-8BE8-3F77E25D40B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF358CA5-D9E2-45CA-8BE8-3F77E25D40B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF358CA5-D9E2-45CA-8BE8-3F77E25D40B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
