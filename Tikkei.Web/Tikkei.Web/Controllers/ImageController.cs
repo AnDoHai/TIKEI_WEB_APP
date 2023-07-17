@@ -14,4 +14,4 @@ namespace Tikkei.Web.Controllers
             return View();
         }
     }
-}Default
+}
