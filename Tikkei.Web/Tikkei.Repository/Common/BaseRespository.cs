@@ -12,12 +12,12 @@ namespace Tikkei.Repository.Common
     public class BaseRespository<T> : IBaseRespository<T> where T : class
     {
         public IDbSet<T> Dbset;
-        private readonly TIKKEI_SYSTEMEntities _dbContext;
+        private readonly TikkeiSystemModel _dbContext;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="T:System.Object"/> class.
         /// </summary>
-        public BaseRespository(TIKKEI_SYSTEMEntities context)
+        public BaseRespository(TikkeiSystemModel context)
         {
             _dbContext = context;
             _dbContext.Configuration.ProxyCreationEnabled = false;

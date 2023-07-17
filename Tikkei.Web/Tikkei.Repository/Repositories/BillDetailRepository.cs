@@ -13,7 +13,7 @@ namespace Tikkei.Repository.Repositories
     }
     public class BillDetailRepository :  BaseRespository<BillDetail>, IBillDetailRepository
     {
-         public BillDetailRepository(TIKKEI_SYSTEMEntities context)
+         public BillDetailRepository(TikkeiSystemModel context)
             : base(context)
             {
 

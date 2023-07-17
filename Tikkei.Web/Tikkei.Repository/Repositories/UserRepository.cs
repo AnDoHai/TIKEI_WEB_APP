@@ -13,7 +13,7 @@ namespace Tikkei.Repository.Repositories
     }
     public class UserRepository : BaseRespository<User>, IUserRepository
     {
-        public UserRepository(TIKKEI_SYSTEMEntities context)
+        public UserRepository(TikkeiSystemModel context)
           : base(context)
         {
 

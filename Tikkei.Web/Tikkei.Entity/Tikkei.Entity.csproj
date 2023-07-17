@@ -46,28 +46,33 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Linq, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.4.3.0\lib\net463\System.Linq.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.Helpers.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    <Reference Include="System.Web.Mvc, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.9\lib\net45\System.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.9\lib\net45\System.Web.Razor.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -87,75 +92,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\UnityConfig.cs" />
-    <Compile Include="Entity\Bill.cs">
-      <DependentUpon>TikkeiSystemModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entity\BillDetail.cs">
-      <DependentUpon>TikkeiSystemModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entity\Category.cs">
-      <DependentUpon>TikkeiSystemModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entity\Color.cs">
-      <DependentUpon>TikkeiSystemModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entity\Image.cs">
-      <DependentUpon>TikkeiSystemModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entity\Product.cs">
-      <DependentUpon>TikkeiSystemModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entity\ProductDetail.cs">
-      <DependentUpon>TikkeiSystemModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entity\Size.cs">
-      <DependentUpon>TikkeiSystemModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entity\TikkeiSystemModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TikkeiSystemModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entity\TikkeiSystemModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TikkeiSystemModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entity\TikkeiSystemModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TikkeiSystemModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Entity\User.cs">
-      <DependentUpon>TikkeiSystemModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entity\UserRole.cs">
-      <DependentUpon>TikkeiSystemModel.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Entity\Bill.cs" />
+    <Compile Include="Entity\BillDetail.cs" />
+    <Compile Include="Entity\Category.cs" />
+    <Compile Include="Entity\Color.cs" />
+    <Compile Include="Entity\Image.cs" />
+    <Compile Include="Entity\Product.cs" />
+    <Compile Include="Entity\ProductDetail.cs" />
+    <Compile Include="Entity\Size.cs" />
+    <Compile Include="Entity\TikkeiSystemModel.cs" />
+    <Compile Include="Entity\User.cs" />
+    <Compile Include="Entity\UserRole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="Entity\TikkeiSystemModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>TikkeiSystemModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Entity\TikkeiSystemModel.edmx.diagram">
-      <DependentUpon>TikkeiSystemModel.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Entity\TikkeiSystemModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TikkeiSystemModel.edmx</DependentUpon>
-      <LastGenOutput>TikkeiSystemModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Entity\TikkeiSystemModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TikkeiSystemModel.edmx</DependentUpon>
-      <LastGenOutput>TikkeiSystemModel.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

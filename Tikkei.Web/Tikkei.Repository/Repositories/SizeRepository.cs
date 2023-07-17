@@ -13,7 +13,7 @@ namespace Tikkei.Repository.Repositories
     }
     public class SizeRepository : BaseRespository<Size>, ISizeRepository
     {
-        public SizeRepository(TIKKEI_SYSTEMEntities context)
+        public SizeRepository(TikkeiSystemModel context)
           : base(context)
         {
 

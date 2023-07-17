@@ -13,7 +13,7 @@ namespace Tikkei.Repository.Repositories
     }
     public class ColorRepository : BaseRespository<Color>, IColorRepository
     {
-        public ColorRepository(TIKKEI_SYSTEMEntities context)
+        public ColorRepository(TikkeiSystemModel context)
            : base(context)
         {
 

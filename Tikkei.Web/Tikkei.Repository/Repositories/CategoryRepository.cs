@@ -13,7 +13,7 @@ namespace Tikkei.Repository.Repositories
     }
     public class CategoryRepository : BaseRespository<Category>, ICategoryRepository
     {
-        public CategoryRepository(TIKKEI_SYSTEMEntities context)
+        public CategoryRepository(TikkeiSystemModel context)
             : base(context)
         {
 

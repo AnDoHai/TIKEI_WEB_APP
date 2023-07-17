@@ -12,9 +12,9 @@ namespace Tikkei.Repository.Common
     public class UnitOfWork : IUnitOfWork
     {
 
-        private readonly TIKKEI_SYSTEMEntities context;
+        private readonly TikkeiSystemModel context;
 
-        public UnitOfWork(TIKKEI_SYSTEMEntities context)
+        public UnitOfWork(TikkeiSystemModel context)
         {
             this.context = context;
         }

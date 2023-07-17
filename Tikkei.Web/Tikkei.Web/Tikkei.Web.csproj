@@ -57,6 +57,11 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Linq, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.4.3.0\lib\net463\System.Linq.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
@@ -217,6 +222,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\UserRole\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -229,7 +235,6 @@
     <Folder Include="Views\ProductDetail\" />
     <Folder Include="Views\Product\" />
     <Folder Include="Views\Size\" />
-    <Folder Include="Views\UserRole\" />
     <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
@@ -263,6 +268,14 @@
     <ProjectReference Include="..\Tikkei.Entity\Tikkei.Entity.csproj">
       <Project>{6c1fb988-ec87-476a-839d-a2576f92e319}</Project>
       <Name>Tikkei.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tikkei.Repository\Tikkei.Repository.csproj">
+      <Project>{2985a575-1c2c-4656-a9e6-c8321b27f822}</Project>
+      <Name>Tikkei.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tikkei.Service\Tikkei.Service.csproj">
+      <Project>{78447188-deff-4e44-a4d1-817ce9dfe169}</Project>
+      <Name>Tikkei.Service</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

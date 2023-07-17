@@ -13,7 +13,7 @@ namespace Tikkei.Repository.Repositories
     }
     public class ProductRepository : BaseRespository<Product>, IProductRepository
     {
-        public ProductRepository(TIKKEI_SYSTEMEntities context)
+        public ProductRepository(TikkeiSystemModel context)
           : base(context)
         {
 

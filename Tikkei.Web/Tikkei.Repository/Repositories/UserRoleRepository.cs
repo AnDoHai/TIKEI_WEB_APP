@@ -10,13 +10,19 @@ namespace Tikkei.Repository.Repository
 {
     public interface IUserRoleRepository : IBaseRespository<UserRole>
     {
+        List<UserRole> GetAllUserRole();
     }
     public class UserRoleRepository : BaseRespository<UserRole>, IUserRoleRepository
     {
-        public UserRoleRepository(TIKKEI_SYSTEMEntities context)
+        public UserRoleRepository(TikkeiSystemModel context)
           : base(context)
         {
 
+        }
+
+        public List<UserRole> GetAllUserRole()
+        {
+            return Dbset.AsQueryable().ToList();
         }
     }
 }

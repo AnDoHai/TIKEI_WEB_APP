@@ -97,3 +97,8 @@ D:\BK_project3\Tikkei.Web\Tikkei.Web\obj\Debug\Tikkei.Web.csproj.CoreCompileInpu
 D:\BK_project3\Tikkei.Web\Tikkei.Web\obj\Debug\Tikkei.Web.csproj.CopyComplete
 D:\BK_project3\Tikkei.Web\Tikkei.Web\obj\Debug\Tikkei.Web.dll
 D:\BK_project3\Tikkei.Web\Tikkei.Web\obj\Debug\Tikkei.Web.pdb
+D:\BK_project3\Tikkei.Web\Tikkei.Web\bin\Tikkei.Repository.dll
+D:\BK_project3\Tikkei.Web\Tikkei.Web\bin\Tikkei.Service.dll
+D:\BK_project3\Tikkei.Web\Tikkei.Web\bin\Tikkei.Repository.pdb
+D:\BK_project3\Tikkei.Web\Tikkei.Web\bin\Tikkei.Repository.dll.config
+D:\BK_project3\Tikkei.Web\Tikkei.Web\bin\Tikkei.Service.pdb

@@ -13,7 +13,7 @@ namespace Tikkei.Repository.Repositories
     }
     public class ImageRepository : BaseRespository<Image>, IImageRepository
     {
-        public ImageRepository(TIKKEI_SYSTEMEntities context)
+        public ImageRepository(TikkeiSystemModel context)
           : base(context)
         {
 
