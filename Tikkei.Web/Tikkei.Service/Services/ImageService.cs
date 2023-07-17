@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Tikkei.Service.Services
 {
-    internal class ImageService
+    public interface IImageService
+    {
+    }
+    public class ImageService : IImageService
     {
     }
 }

@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Tikkei.Service.Services
 {
-    internal class ColorService
+    public interface IColorService
+    {
+    }
+    public class ColorService : IColorService
     {
     }
 }

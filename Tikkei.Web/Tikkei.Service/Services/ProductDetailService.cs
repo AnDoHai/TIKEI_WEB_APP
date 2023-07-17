@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Tikkei.Service.Services
 {
-    internal class ProductDetailService
+    public interface IProductDetailService
+    {
+    }
+    public class ProductDetailService : IProductDetailService
     {
     }
 }

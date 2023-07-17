@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Tikkei.Service.Services
 {
-    internal class BillService
+    public interface IBillService
+    {
+    }
+    public class BillService : IBillService
     {
     }
 }

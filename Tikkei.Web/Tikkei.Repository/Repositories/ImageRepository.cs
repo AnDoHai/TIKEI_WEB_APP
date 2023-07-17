@@ -3,10 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Tikkei.Entity.Entity;
+using Tikkei.Repository.Common;
 
 namespace Tikkei.Repository.Repositories
 {
-    internal class ImageRepository
+    public interface IImageRepository : IBaseRespository<Image>
     {
+    }
+    public class ImageRepository : BaseRespository<Image>, IImageRepository
+    {
+        public ImageRepository(TIKKEI_SYSTEMEntities context)
+          : base(context)
+        {
+
+        }
     }
 }

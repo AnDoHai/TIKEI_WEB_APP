@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Tikkei.Service.Services
 {
-    internal class SizeService
+    public interface ISizeService
+    {
+    }
+    public class SizeService : ISizeService
     {
     }
 }

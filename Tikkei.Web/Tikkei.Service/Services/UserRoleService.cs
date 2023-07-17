@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Tikkei.Service.Services
 {
-    internal class UserRoleService
+    public interface IUserRoleService
+    {
+    }
+    public class UserRoleService : IUserRoleService
     {
     }
 }

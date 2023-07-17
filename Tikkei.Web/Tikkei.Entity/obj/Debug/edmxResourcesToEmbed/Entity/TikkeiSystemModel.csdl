@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TIKKEI_SYSTEMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="TIKKEI_SYSTEMEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Bill" EntityType="TIKKEI_SYSTEMModel.Bill" />
+    <EntitySet Name="BillDetail" EntityType="TIKKEI_SYSTEMModel.BillDetail" />
+    <EntitySet Name="Category" EntityType="TIKKEI_SYSTEMModel.Category" />
+    <EntitySet Name="Color" EntityType="TIKKEI_SYSTEMModel.Color" />
+    <EntitySet Name="Image" EntityType="TIKKEI_SYSTEMModel.Image" />
+    <EntitySet Name="Product" EntityType="TIKKEI_SYSTEMModel.Product" />
+    <EntitySet Name="ProductDetail" EntityType="TIKKEI_SYSTEMModel.ProductDetail" />
+    <EntitySet Name="Size" EntityType="TIKKEI_SYSTEMModel.Size" />
+    <EntitySet Name="User" EntityType="TIKKEI_SYSTEMModel.User" />
+    <EntitySet Name="UserRole" EntityType="TIKKEI_SYSTEMModel.UserRole" />
+    <AssociationSet Name="FK_dbo_BillDetail_dbo_Bill_BillID" Association="TIKKEI_SYSTEMModel.FK_dbo_BillDetail_dbo_Bill_BillID">
+      <End Role="Bill" EntitySet="Bill" />
+      <End Role="BillDetail" EntitySet="BillDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_BillDetail_dbo_ProductDetail_ProductDetailID" Association="TIKKEI_SYSTEMModel.FK_dbo_BillDetail_dbo_ProductDetail_ProductDetailID">
+      <End Role="ProductDetail" EntitySet="ProductDetail" />
+      <End Role="BillDetail" EntitySet="BillDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Product_dbo_Category_CategoryID" Association="TIKKEI_SYSTEMModel.FK_dbo_Product_dbo_Category_CategoryID">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ProductDetail_dbo_Color_ColorID" Association="TIKKEI_SYSTEMModel.FK_dbo_ProductDetail_dbo_Color_ColorID">
+      <End Role="Color" EntitySet="Color" />
+      <End Role="ProductDetail" EntitySet="ProductDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Image_dbo_ProductDetail_ProductDetailID" Association="TIKKEI_SYSTEMModel.FK_dbo_Image_dbo_ProductDetail_ProductDetailID">
+      <End Role="ProductDetail" EntitySet="ProductDetail" />
+      <End Role="Image" EntitySet="Image" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ProductDetail_dbo_Product_ProductID" Association="TIKKEI_SYSTEMModel.FK_dbo_ProductDetail_dbo_Product_ProductID">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="ProductDetail" EntitySet="ProductDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ProductDetail_dbo_Size_SizeID" Association="TIKKEI_SYSTEMModel.FK_dbo_ProductDetail_dbo_Size_SizeID">
+      <End Role="Size" EntitySet="Size" />
+      <End Role="ProductDetail" EntitySet="ProductDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_User_dbo_UserRole_UserRoleID" Association="TIKKEI_SYSTEMModel.FK_dbo_User_dbo_UserRole_UserRoleID">
+      <End Role="UserRole" EntitySet="UserRole" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Bill">
+    <Key>
+      <PropertyRef Name="BillID" />
+    </Key>
+    <Property Name="BillID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BillName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="Total" Type="Single" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="BillDetail" Relationship="TIKKEI_SYSTEMModel.FK_dbo_BillDetail_dbo_Bill_BillID" FromRole="Bill" ToRole="BillDetail" />
+  </EntityType>
+  <EntityType Name="BillDetail">
+    <Key>
+      <PropertyRef Name="BillDetailID" />
+    </Key>
+    <Property Name="BillDetailID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BillID" Type="Int32" Nullable="false" />
+    <Property Name="Quanlity" Type="Int32" Nullable="false" />
+    <Property Name="Total" Type="Single" Nullable="false" />
+    <Property Name="ProductDetailID" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Bill" Relationship="TIKKEI_SYSTEMModel.FK_dbo_BillDetail_dbo_Bill_BillID" FromRole="BillDetail" ToRole="Bill" />
+    <NavigationProperty Name="ProductDetail" Relationship="TIKKEI_SYSTEMModel.FK_dbo_BillDetail_dbo_ProductDetail_ProductDetailID" FromRole="BillDetail" ToRole="ProductDetail" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Product" Relationship="TIKKEI_SYSTEMModel.FK_dbo_Product_dbo_Category_CategoryID" FromRole="Category" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Color">
+    <Key>
+      <PropertyRef Name="ColorID" />
+    </Key>
+    <Property Name="ColorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ColorName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ProductDetail" Relationship="TIKKEI_SYSTEMModel.FK_dbo_ProductDetail_dbo_Color_ColorID" FromRole="Color" ToRole="ProductDetail" />
+  </EntityType>
+  <EntityType Name="Image">
+    <Key>
+      <PropertyRef Name="ImageID" />
+    </Key>
+    <Property Name="ImageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ImageLink" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ProductDetailID" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ProductDetail" Relationship="TIKKEI_SYSTEMModel.FK_dbo_Image_dbo_ProductDetail_ProductDetailID" FromRole="Image" ToRole="ProductDetail" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryID" Type="Int32" Nullable="false" />
+    <Property Name="ProductName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Single" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Category" Relationship="TIKKEI_SYSTEMModel.FK_dbo_Product_dbo_Category_CategoryID" FromRole="Product" ToRole="Category" />
+    <NavigationProperty Name="ProductDetail" Relationship="TIKKEI_SYSTEMModel.FK_dbo_ProductDetail_dbo_Product_ProductID" FromRole="Product" ToRole="ProductDetail" />
+  </EntityType>
+  <EntityType Name="ProductDetail">
+    <Key>
+      <PropertyRef Name="ProductDetailID" />
+    </Key>
+    <Property Name="ProductDetailID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="ColorID" Type="Int32" Nullable="false" />
+    <Property Name="SizeID" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="BillDetail" Relationship="TIKKEI_SYSTEMModel.FK_dbo_BillDetail_dbo_ProductDetail_ProductDetailID" FromRole="ProductDetail" ToRole="BillDetail" />
+    <NavigationProperty Name="Color" Relationship="TIKKEI_SYSTEMModel.FK_dbo_ProductDetail_dbo_Color_ColorID" FromRole="ProductDetail" ToRole="Color" />
+    <NavigationProperty Name="Image" Relationship="TIKKEI_SYSTEMModel.FK_dbo_Image_dbo_ProductDetail_ProductDetailID" FromRole="ProductDetail" ToRole="Image" />
+    <NavigationProperty Name="Product" Relationship="TIKKEI_SYSTEMModel.FK_dbo_ProductDetail_dbo_Product_ProductID" FromRole="ProductDetail" ToRole="Product" />
+    <NavigationProperty Name="Size" Relationship="TIKKEI_SYSTEMModel.FK_dbo_ProductDetail_dbo_Size_SizeID" FromRole="ProductDetail" ToRole="Size" />
+  </EntityType>
+  <EntityType Name="Size">
+    <Key>
+      <PropertyRef Name="SizeID" />
+    </Key>
+    <Property Name="SizeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SizeName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ProductDetail" Relationship="TIKKEI_SYSTEMModel.FK_dbo_ProductDetail_dbo_Size_SizeID" FromRole="Size" ToRole="ProductDetail" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UserRoleID" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="UserRole" Relationship="TIKKEI_SYSTEMModel.FK_dbo_User_dbo_UserRole_UserRoleID" FromRole="User" ToRole="UserRole" />
+  </EntityType>
+  <EntityType Name="UserRole">
+    <Key>
+      <PropertyRef Name="UserRoleID" />
+    </Key>
+    <Property Name="UserRoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserRoleName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreatedBy" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="User" Relationship="TIKKEI_SYSTEMModel.FK_dbo_User_dbo_UserRole_UserRoleID" FromRole="UserRole" ToRole="User" />
+  </EntityType>
+  <Association Name="FK_dbo_BillDetail_dbo_Bill_BillID">
+    <End Type="TIKKEI_SYSTEMModel.Bill" Role="Bill" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="TIKKEI_SYSTEMModel.BillDetail" Role="BillDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bill">
+        <PropertyRef Name="BillID" />
+      </Principal>
+      <Dependent Role="BillDetail">
+        <PropertyRef Name="BillID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_BillDetail_dbo_ProductDetail_ProductDetailID">
+    <End Type="TIKKEI_SYSTEMModel.ProductDetail" Role="ProductDetail" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="TIKKEI_SYSTEMModel.BillDetail" Role="BillDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductDetail">
+        <PropertyRef Name="ProductDetailID" />
+      </Principal>
+      <Dependent Role="BillDetail">
+        <PropertyRef Name="ProductDetailID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Product_dbo_Category_CategoryID">
+    <End Type="TIKKEI_SYSTEMModel.Category" Role="Category" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="TIKKEI_SYSTEMModel.Product" Role="Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ProductDetail_dbo_Color_ColorID">
+    <End Type="TIKKEI_SYSTEMModel.Color" Role="Color" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="TIKKEI_SYSTEMModel.ProductDetail" Role="ProductDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Color">
+        <PropertyRef Name="ColorID" />
+      </Principal>
+      <Dependent Role="ProductDetail">
+        <PropertyRef Name="ColorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Image_dbo_ProductDetail_ProductDetailID">
+    <End Type="TIKKEI_SYSTEMModel.ProductDetail" Role="ProductDetail" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="TIKKEI_SYSTEMModel.Image" Role="Image" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductDetail">
+        <PropertyRef Name="ProductDetailID" />
+      </Principal>
+      <Dependent Role="Image">
+        <PropertyRef Name="ProductDetailID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ProductDetail_dbo_Product_ProductID">
+    <End Type="TIKKEI_SYSTEMModel.Product" Role="Product" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="TIKKEI_SYSTEMModel.ProductDetail" Role="ProductDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="ProductDetail">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ProductDetail_dbo_Size_SizeID">
+    <End Type="TIKKEI_SYSTEMModel.Size" Role="Size" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="TIKKEI_SYSTEMModel.ProductDetail" Role="ProductDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Size">
+        <PropertyRef Name="SizeID" />
+      </Principal>
+      <Dependent Role="ProductDetail">
+        <PropertyRef Name="SizeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_User_dbo_UserRole_UserRoleID">
+    <End Type="TIKKEI_SYSTEMModel.UserRole" Role="UserRole" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="TIKKEI_SYSTEMModel.User" Role="User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserRole">
+        <PropertyRef Name="UserRoleID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="UserRoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -3,10 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Tikkei.Entity.Entity;
+using Tikkei.Repository.Common;
 
 namespace Tikkei.Repository.Repositories
 {
-    internal class ProductRepository
+    public interface IProductRepository : IBaseRespository<Product>
     {
+    }
+    public class ProductRepository : BaseRespository<Product>, IProductRepository
+    {
+        public ProductRepository(TIKKEI_SYSTEMEntities context)
+          : base(context)
+        {
+
+        }
     }
 }
